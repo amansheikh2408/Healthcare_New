@@ -5,8 +5,9 @@ namespace Healthcare.Models
     public class User
     {
         public int Id { get; set; }
-
-        [Required, EmailAddress]
+        [Required]
+        public string Name { get; set; }
+        [Required, EmailAddress]    
         public string Email { get; set; } = null!;
 
         [Required]
@@ -16,5 +17,7 @@ namespace Healthcare.Models
         public string Role { get; set; } = "User";
 
         public bool IsActive { get; set; } = true;
+
+        public List<Appointment> Appointments { get; set; } = new List<Appointment>();
     }
 }

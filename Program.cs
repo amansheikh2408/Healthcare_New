@@ -1,4 +1,5 @@
 using Healthcare.Data;
+using Healthcare.Interfaces;
 using Healthcare.Models;
 using Healthcare.Repositories;
 using Healthcare.Services;
@@ -30,6 +31,9 @@ builder.Services.AddScoped<IOtpService, OtpService>();
 builder.Services.AddScoped<ITokenService, TokenService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+builder.Services.AddScoped<IDoctorService, DoctorService>();
+builder.Services.AddScoped<IPatientService, PatientService>();
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 
 // JWT Auth
 var jwtSection = builder.Configuration.GetSection("Jwt");

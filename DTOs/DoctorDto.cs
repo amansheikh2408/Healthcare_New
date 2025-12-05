@@ -1,9 +1,9 @@
 ﻿namespace Healthcare.DTOs
 {
-    public class UserDtos
+    public class DoctorDto
     {
         public string Name { get; set; }
         public string Email { get; set; }
-        public record UserDto(int Id,string Name, string Email, string Role);
+        public string Specialization { get; set; }
     }
 }
